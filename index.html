@@ -1,0 +1,292 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Pramod Kushwah – Video Editor, Gwalior</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Sora:wght@400;600;800&family=Mukta:wght@400;600&display=swap" rel="stylesheet">
+<style>
+:root{--bg:#0e0f1d;--bg2:#15172b;--panel:rgba(255,255,255,.05);--ink:#f3f2fb;--mute:#a9abc6;--line:rgba(255,255,255,.12);--c1:#9b8cff;--c2:#38d1bd;--c3:#ffb347;--c4:#ff5a6e;--glow:rgba(155,140,255,.28);--bar:rgba(14,15,29,.72);color-scheme:dark;box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}
+@media (prefers-color-scheme:light){:root:not([data-theme="dark"]){--bg:#f5f4fb;--bg2:#eceaf7;--panel:rgba(255,255,255,.8);--ink:#1b1c2e;--mute:#585b78;--line:rgba(30,30,70,.14);--c1:#6a58ee;--c2:#12998a;--c3:#c9780a;--c4:#d93a50;--glow:rgba(106,88,238,.2);--bar:rgba(245,244,251,.8);color-scheme:light}}
+:root[data-theme="light"]{--bg:#f5f4fb;--bg2:#eceaf7;--panel:rgba(255,255,255,.8);--ink:#1b1c2e;--mute:#585b78;--line:rgba(30,30,70,.14);--c1:#6a58ee;--c2:#12998a;--c3:#c9780a;--c4:#d93a50;--glow:rgba(106,88,238,.2);--bar:rgba(245,244,251,.8);color-scheme:light}
+*,*::before,*::after{box-sizing:inherit}
+html{scroll-behavior:smooth;scroll-padding-top:70px;height:auto}
+body{margin:0;background:var(--bg);color:var(--ink);font:400 17px/1.65 "Mukta","Segoe UI",sans-serif;overflow-x:hidden}
+h1,h2,h3{font-family:"Sora","Segoe UI",sans-serif;line-height:1.12;margin:0}
+a{color:inherit}
+:focus-visible{outline:3px solid var(--c1);outline-offset:3px}
+.wrap{max-width:1040px;margin:0 auto;padding:0 22px}
+/* header */
+header.bar{position:fixed;top:0;left:0;right:0;z-index:20;padding-top:env(safe-area-inset-top,0px);transition:background .3s,box-shadow .3s}
+header.bar.on{background:var(--bar);backdrop-filter:blur(12px);-webkit-backdrop-filter:blur(12px);box-shadow:0 1px 0 var(--line)}
+.bar .wrap{display:flex;justify-content:space-between;align-items:center;height:62px}
+.logo{font:800 18px "Sora",sans-serif;text-decoration:none;display:flex;align-items:center;gap:10px}
+.logo i{width:12px;height:12px;border-radius:50%;background:var(--c4);box-shadow:0 0 0 0 var(--c4);animation:rec 1.8s infinite}
+@keyframes rec{70%{box-shadow:0 0 0 10px transparent}100%{box-shadow:0 0 0 0 transparent}}
+nav a{margin-left:20px;text-decoration:none;color:var(--mute);font-weight:600;font-size:15px;transition:color .2s}
+nav a:hover{color:var(--ink)}
+/* hero */
+.hero{position:relative;min-height:100svh;display:flex;align-items:center;padding:110px 0 60px;overflow:hidden;background:radial-gradient(60% 50% at 80% 10%,var(--glow),transparent 70%),radial-gradient(50% 45% at 5% 90%,rgba(56,209,189,.16),transparent 70%)}
+.hero::after{content:"";position:absolute;inset:0;background-image:linear-gradient(var(--line) 1px,transparent 1px),linear-gradient(90deg,var(--line) 1px,transparent 1px);background-size:64px 64px;opacity:.35;mask-image:radial-gradient(70% 60% at 50% 40%,#000,transparent);-webkit-mask-image:radial-gradient(70% 60% at 50% 40%,#000,transparent);pointer-events:none}
+.hero .wrap{position:relative;z-index:1}
+.hello{color:var(--mute);font-size:19px;margin:0 0 10px}
+.hero h1{font-size:clamp(42px,9vw,92px);font-weight:800;letter-spacing:-.03em;background:linear-gradient(100deg,var(--ink) 30%,var(--c1) 70%,var(--c2));-webkit-background-clip:text;background-clip:text;color:transparent;background-size:200% 100%;animation:shine 7s ease-in-out infinite alternate}
+@keyframes shine{to{background-position:100% 0}}
+.role{font:600 clamp(20px,3.6vw,30px) "Sora",sans-serif;margin:16px 0 18px;min-height:1.4em}
+.role span{color:var(--c3)}
+.role::after{content:"";display:inline-block;width:3px;height:1em;background:var(--c4);margin-left:6px;vertical-align:-.12em;animation:blink 1s steps(1) infinite}
+@keyframes blink{50%{opacity:0}}
+.lead{max-width:54ch;color:var(--mute);font-size:19px;margin:0 0 28px}
+.btns{display:flex;gap:12px;flex-wrap:wrap}
+.btn{display:inline-block;padding:14px 26px;border-radius:999px;font:600 16px "Sora",sans-serif;text-decoration:none;border:1px solid var(--line);color:var(--ink);transition:transform .2s,box-shadow .2s,background .2s}
+.btn:hover{transform:translateY(-3px)}
+.btn.main{background:linear-gradient(100deg,var(--c1),var(--c4));border-color:transparent;color:#fff;box-shadow:0 10px 30px -10px var(--c4)}
+.stats{display:flex;gap:34px;flex-wrap:wrap;margin-top:46px}
+.stat b{display:block;font:800 clamp(30px,5vw,44px) "Sora",sans-serif}
+.stat span{color:var(--mute);font-size:15px}
+/* timeline */
+.tl{margin-top:44px;background:var(--panel);border:1px solid var(--line);border-radius:14px;padding:16px;position:relative;overflow:hidden;backdrop-filter:blur(6px)}
+.tl .row{display:flex;align-items:center;gap:8px;margin-bottom:8px}
+.tl .row:last-of-type{margin-bottom:0}
+.tl b{width:30px;flex:none;font:600 12px "Sora",sans-serif;color:var(--mute)}
+.lane{flex:1;display:flex;gap:4px;height:38px}
+.clip{border-radius:6px;color:#fff;font:600 13px/38px "Sora",sans-serif;padding:0 10px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;min-width:0;transform-origin:left;transform:scaleX(0);animation:grow .8s cubic-bezier(.2,.8,.2,1) forwards;animation-delay:calc(var(--i)*.12s + .3s)}
+@keyframes grow{to{transform:scaleX(1)}}
+.c1{background:#7a6af0}.c2{background:#1f9d8f}.c3{background:#d98a1c}.c4{background:#d9455a}
+.lane.a .clip{height:26px;line-height:26px;opacity:.55}
+.head{position:absolute;top:0;bottom:0;left:56px;width:2px;background:var(--c4);box-shadow:0 0 12px var(--c4);animation:sweep 9s linear infinite}
+.head::before{content:"";position:absolute;top:0;left:-6px;border:7px solid transparent;border-top:10px solid var(--c4)}
+@keyframes sweep{0%{left:56px}100%{left:calc(100% - 18px)}}
+/* sections */
+section{padding:96px 0 0}
+section h2{font-size:clamp(28px,5vw,44px);letter-spacing:-.02em;margin-bottom:12px}
+.sub{color:var(--mute);max-width:58ch;margin:0 0 34px}
+.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(230px,1fr));gap:18px}
+.card{position:relative;background:var(--panel);border:1px solid var(--line);border-radius:16px;padding:24px;overflow:hidden;transition:transform .25s,border-color .25s;--x:50%;--y:0%}
+.card::before{content:"";position:absolute;inset:0;background:radial-gradient(260px circle at var(--x) var(--y),var(--glow),transparent 70%);opacity:0;transition:opacity .3s;pointer-events:none}
+.card:hover{transform:translateY(-6px);border-color:var(--c1)}
+.card:hover::before{opacity:1}
+.card>*{position:relative}
+.ico{width:46px;height:46px;border-radius:12px;display:grid;place-items:center;margin-bottom:16px;background:var(--bg2);border:1px solid var(--line)}
+.ico svg{width:24px;height:24px;fill:none;stroke:var(--c2);stroke-width:1.8;stroke-linecap:round;stroke-linejoin:round}
+.card h3{font-size:20px;margin-bottom:8px}
+.card p{margin:0 0 10px;color:var(--mute)}
+.card a.go{font:600 15px "Sora",sans-serif;color:var(--c1);text-decoration:none}
+.card a.go:hover{text-decoration:underline}
+.yt .ico svg{stroke:var(--c4)}
+.vid{display:block;text-decoration:none;background:var(--panel);border:1px solid var(--line);border-radius:16px;overflow:hidden;transition:transform .25s,border-color .25s,box-shadow .25s}
+.vid:hover{transform:translateY(-6px);border-color:var(--c4);box-shadow:0 22px 40px -22px var(--c4)}
+.th{position:relative;display:block;aspect-ratio:16/9;overflow:hidden;background:#000}
+.th img{width:100%;height:100%;object-fit:cover;display:block;transition:transform .5s}
+.vid:hover .th img{transform:scale(1.06)}
+.play{position:absolute;left:50%;top:50%;width:64px;height:64px;margin:-32px 0 0 -32px;border-radius:50%;background:rgba(255,90,110,.92);display:grid;place-items:center;box-shadow:0 0 0 0 rgba(255,90,110,.6);transition:transform .25s}
+.vid:hover .play{transform:scale(1.15);animation:ping 1.2s infinite}
+@keyframes ping{70%{box-shadow:0 0 0 18px transparent}}
+.play svg{width:28px;height:28px;fill:#fff;margin-left:3px}
+.tag{position:absolute;left:12px;top:12px;font:600 12px "Sora",sans-serif;font-style:normal;background:rgba(0,0,0,.65);color:#fff;padding:4px 10px;border-radius:999px}
+.cap{display:block;padding:14px 18px 16px}
+.cap b{display:block;font:600 17px/1.35 "Mukta","Sora",sans-serif;color:var(--ink)}
+.cap small{color:var(--c1);font:600 13px "Sora",sans-serif}
+.vid.feat{margin-bottom:34px}
+.vid.feat .cap b{font-size:clamp(20px,3.4vw,28px)}
+.vid.feat .play{width:84px;height:84px;margin:-42px 0 0 -42px}
+.vid.feat .play svg{width:38px;height:38px}
+.more{font-size:22px;margin:0 0 18px}
+.vgrid{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:20px}
+.chs{display:flex;gap:12px;flex-wrap:wrap;margin-top:30px}
+.chip{display:inline-flex;align-items:center;gap:10px;padding:11px 18px;border:1px solid var(--line);border-radius:999px;text-decoration:none;font:600 14px "Sora",sans-serif;background:var(--panel);transition:transform .2s,border-color .2s}
+.chip:hover{transform:translateY(-3px);border-color:var(--c4)}
+.chip svg{width:20px;height:20px;fill:none;stroke:var(--c4);stroke-width:1.8;stroke-linecap:round;stroke-linejoin:round}
+.morebox{margin-top:60px;border:1px solid var(--line);border-radius:22px;padding:clamp(22px,5vw,40px);background:radial-gradient(70% 90% at 50% 0%,var(--glow),transparent 70%),var(--panel)}
+.morebox>h3{font-size:clamp(24px,4.5vw,36px);margin-bottom:8px}
+.morebox>p{color:var(--mute);max-width:60ch;margin:0 0 26px}
+.morebox .card{background:var(--bg)}
+.six{margin-top:70px;display:grid;grid-template-columns:auto 1fr;gap:clamp(20px,5vw,56px);align-items:center;border:1px solid var(--line);border-radius:24px;padding:clamp(24px,5vw,48px);background:radial-gradient(60% 120% at 0% 50%,var(--glow),transparent 70%),var(--panel)}
+.six .big{text-align:center;line-height:1}
+.six .big b{display:block;font:800 clamp(90px,18vw,170px) "Sora",sans-serif;letter-spacing:-.05em;background:linear-gradient(160deg,var(--c3),var(--c4) 60%,var(--c1));-webkit-background-clip:text;background-clip:text;color:transparent}
+.six .big span{font:600 clamp(20px,3vw,28px) "Sora",sans-serif;color:var(--mute)}
+.six h2{font-size:clamp(24px,4.2vw,38px);margin-bottom:10px}
+.six .txt>p{color:var(--mute);margin:0 0 26px;max-width:56ch}
+.yrs{list-style:none;margin:0 0 26px;padding:0;display:flex;justify-content:space-between;position:relative}
+.yrs::before,.fill{content:"";position:absolute;left:6px;right:6px;top:6px;height:4px;border-radius:4px;background:var(--line)}
+.fill{right:auto;width:0;background:linear-gradient(90deg,var(--c1),var(--c4));transition:width 2.2s cubic-bezier(.3,.7,.2,1) .4s}
+.js .six.in .fill{width:calc(100% - 12px)}
+.yrs li{position:relative;z-index:1;display:flex;flex-direction:column;align-items:center;gap:8px}
+.yrs i{width:16px;height:16px;border-radius:50%;background:var(--bg);border:3px solid var(--line);transition:border-color .4s,background .4s;transition-delay:calc(.4s + var(--k)*.3s)}
+.js .six.in .yrs i{border-color:var(--c4);background:var(--c4)}
+.yrs span{font:600 13px "Sora",sans-serif;color:var(--mute)}
+.facts{list-style:none;margin:0;padding:0;display:flex;gap:10px 26px;flex-wrap:wrap;color:var(--mute)}
+.facts b{color:var(--ink)}
+@media (max-width:700px){.six{grid-template-columns:1fr;text-align:left}.six .big{text-align:left}.yrs span{font-size:11px}}
+/* experience */
+.line{position:relative;margin-left:8px;padding-left:30px;border-left:2px solid var(--line)}
+.job{position:relative;padding:0 0 34px}
+.job::before{content:"";position:absolute;left:-39px;top:6px;width:16px;height:16px;border-radius:50%;background:var(--bg);border:3px solid var(--c1)}
+.job time{font:600 14px "Sora",sans-serif;color:var(--c3)}
+.job h3{font-size:21px;margin:4px 0}
+.job p{margin:0;color:var(--mute)}
+/* marquee */
+.marq{overflow:hidden;border-block:1px solid var(--line);margin-top:96px;padding:20px 0;mask-image:linear-gradient(90deg,transparent,#000 12%,#000 88%,transparent);-webkit-mask-image:linear-gradient(90deg,transparent,#000 12%,#000 88%,transparent)}
+.marq div{display:flex;gap:48px;width:max-content;animation:scroll 28s linear infinite;font:800 clamp(22px,4vw,34px) "Sora",sans-serif;color:var(--mute);white-space:nowrap}
+.marq em{font-style:normal;color:var(--c2)}
+@keyframes scroll{to{transform:translateX(-50%)}}
+/* contact */
+.cta{margin-top:0;text-align:center;border:1px solid var(--line);border-radius:24px;padding:clamp(34px,7vw,70px) 22px;background:radial-gradient(70% 90% at 50% 0%,var(--glow),transparent 70%),var(--panel)}
+.cta h2{font-size:clamp(30px,6vw,56px)}
+.cta .btns{justify-content:center;margin:24px 0 18px}
+.cta p{margin:4px 0;color:var(--mute)}
+.cta a.l{color:var(--ink);font-weight:600;word-break:break-all}
+footer{padding:44px 0 36px;color:var(--mute);font-size:14px;text-align:center}
+/* reveal */
+.js .rv{opacity:0;transform:translateY(28px);transition:opacity .8s ease,transform .8s ease;transition-delay:var(--d,0s)}
+.js .rv.in{opacity:1;transform:none}
+@media (max-width:620px){nav a:nth-child(1){display:none}.tl b{width:22px}.stats{gap:24px}}
+@media (prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important}.clip{transform:none}.js .rv{opacity:1;transform:none}.head{left:50%}}
+</style>
+</head>
+<body>
+<script>document.documentElement.classList.add('js')</script>
+<header class="bar" id="bar"><div class="wrap">
+  <a class="logo" href="#top"><i></i>Pramod Kushwah</a>
+  <nav><a href="#services">Services</a><a href="#work">Work</a><a href="#experience">Experience</a><a href="#contact">Contact</a></nav>
+</div></header>
+
+<main id="top">
+<div class="hero"><div class="wrap">
+  <p class="hello">Hi, I’m</p>
+  <h1>Pramod Kushwah</h1>
+  <div class="role"><span id="role">News Video Editor</span></div>
+  <p class="lead">Video editor from Gwalior with experience since 2020 and 3000+ videos edited. I cut news bulletins, YouTube videos, wedding films and short videos in Premiere Pro and Photoshop.</p>
+  <div class="btns"><a class="btn main" href="#contact">Hire me</a><a class="btn" href="#work">See my work</a></div>
+  <div class="stats">
+    <div class="stat"><b><span data-to="6">0</span>+</b><span>Years editing</span></div>
+    <div class="stat"><b><span data-to="4">0</span></b><span>Channels I work on</span></div>
+    <div class="stat"><b><span data-to="3000">0</span>+</b><span>Videos edited</span></div>
+  </div>
+  <div class="tl" aria-hidden="true">
+    <div class="row"><b>V2</b><div class="lane"><div class="clip c4" style="flex:2;--i:0">Shorts</div><div class="clip c3" style="flex:3;--i:1">Wedding video</div><div class="clip c2" style="flex:2;--i:2">Reels</div></div></div>
+    <div class="row"><b>V1</b><div class="lane"><div class="clip c1" style="flex:3;--i:1">News video</div><div class="clip c2" style="flex:2;--i:2">Annapurna Muhim</div><div class="clip c1" style="flex:3;--i:3">News package</div><div class="clip c3" style="flex:1;--i:4">Promo</div></div></div>
+    <div class="row"><b>A1</b><div class="lane a"><div class="clip c1" style="flex:5;--i:3">Voice-over</div><div class="clip c2" style="flex:4;--i:4">Music</div></div></div>
+    <div class="head"></div>
+  </div>
+</div></div>
+
+<div class="wrap">
+<div class="six rv">
+  <div class="big"><b>6+</b><span>years</span></div>
+  <div class="txt">
+    <h2>Six years. One craft. No break.</h2>
+    <p>Since 2020 I have edited videos continuously: news, interviews, episodes, wedding films and shorts.</p>
+    <ol class="yrs"><li style="--k:0"><i></i><span>2020</span></li><li style="--k:1"><i></i><span>2021</span></li><li style="--k:2"><i></i><span>2022</span></li><li style="--k:3"><i></i><span>2023</span></li><li style="--k:4"><i></i><span>2024</span></li><li style="--k:5"><i></i><span>2025</span></li><li style="--k:6"><i></i><span>2026</span></li><div class="fill"></div></ol>
+    <ul class="facts"><li><b>3000+</b> videos edited</li><li><b>4</b> YouTube channels</li><li><b>Premiere Pro</b> and <b>Photoshop</b></li></ul>
+  </div>
+</div>
+</div>
+<div class="wrap">
+<section id="services">
+  <h2 class="rv">What I edit</h2>
+  <p class="sub rv">From daily news to once-in-a-lifetime weddings, every video gets the same care.</p>
+  <div class="grid">
+    <div class="card rv"><div class="ico"><svg viewBox="0 0 24 24"><rect x="3" y="4" width="18" height="13" rx="2"/><path d="M8 21h8M12 17v4"/></svg></div><h3>News videos</h3><p>Fast, accurate bulletins and packages with graphics and lower-thirds.</p></div>
+    <div class="card rv" style="--d:.1s"><div class="ico"><svg viewBox="0 0 24 24"><path d="M12 20s-7-4.4-7-10a4 4 0 0 1 7-2.6A4 4 0 0 1 19 10c0 5.6-7 10-7 10z"/></svg></div><h3>Wedding videos</h3><p>Highlight reels and full films with colour and music that fit the mood.</p></div>
+    <div class="card rv" style="--d:.2s"><div class="ico"><svg viewBox="0 0 24 24"><rect x="7" y="2" width="10" height="20" rx="2"/><path d="M11 18h2"/></svg></div><h3>Short videos</h3><p>Reels and Shorts with captions, tight pacing and a strong first second.</p></div>
+    <div class="card rv" style="--d:.3s"><div class="ico"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><path d="M10 8.5l5 3.5-5 3.5z"/></svg></div><h3>YouTube videos</h3><p>Complete channel editing, from rough cut to final export, plus thumbnails.</p></div>
+  </div>
+</section>
+
+<section id="work">
+  <h2 class="rv">My work</h2>
+  <p class="sub rv">Click any thumbnail to watch the video on YouTube.</p>
+  <a class="vid feat rv" href="https://www.youtube.com/watch?v=6TO1pSYmr1E" target="_blank" rel="noopener" aria-label="Watch 64 लाख शिष्यों की परीक्षा on YouTube"><span class="th"><img src="https://i.ytimg.com/vi/6TO1pSYmr1E/maxresdefault.jpg" onerror="this.onerror=null;this.src='https://i.ytimg.com/vi/6TO1pSYmr1E/hqdefault.jpg'" alt="64 लाख शिष्यों की परीक्षा" loading="lazy"><span class="play"><svg viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg></span><em class="tag">AI Film</em></span><span class="cap"><b>64 लाख शिष्यों की परीक्षा</b><small>Watch on YouTube</small></span></a>
+  <h3 class="more rv">AI films and videos I edited</h3>
+  <div class="vgrid">
+    <a class="vid rv" href="https://www.youtube.com/watch?v=VfJC44zTrcI" target="_blank" rel="noopener" aria-label="Watch निर्वाण दिवस – पाखंडवाद की सबसे खौफनाक सच्चाई on YouTube"><span class="th"><img src="https://i.ytimg.com/vi/VfJC44zTrcI/maxresdefault.jpg" onerror="this.onerror=null;this.src='https://i.ytimg.com/vi/VfJC44zTrcI/hqdefault.jpg'" alt="निर्वाण दिवस – पाखंडवाद की सबसे खौफनाक सच्चाई" loading="lazy"><span class="play"><svg viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg></span><em class="tag">AI Version</em></span><span class="cap"><b>निर्वाण दिवस – पाखंडवाद की सबसे खौफनाक सच्चाई</b><small>Watch on YouTube</small></span></a>
+    <a class="vid rv" href="https://www.youtube.com/watch?v=s-vfv9PdJwo" target="_blank" rel="noopener" aria-label="Watch अग्नि परीक्षा – सेऊ सम्मन नेकी की अमरगाथा on YouTube"><span class="th"><img src="https://i.ytimg.com/vi/s-vfv9PdJwo/maxresdefault.jpg" onerror="this.onerror=null;this.src='https://i.ytimg.com/vi/s-vfv9PdJwo/hqdefault.jpg'" alt="अग्नि परीक्षा – सेऊ सम्मन नेकी की अमरगाथा" loading="lazy"><span class="play"><svg viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg></span><em class="tag">AI Video</em></span><span class="cap"><b>अग्नि परीक्षा – सेऊ सम्मन नेकी की अमरगाथा</b><small>Watch on YouTube</small></span></a>
+    <a class="vid rv" href="https://www.youtube.com/watch?v=qi5x1gv6j1Y" target="_blank" rel="noopener" aria-label="Watch महाभारत का असली दोषी कौन? on YouTube"><span class="th"><img src="https://i.ytimg.com/vi/qi5x1gv6j1Y/maxresdefault.jpg" onerror="this.onerror=null;this.src='https://i.ytimg.com/vi/qi5x1gv6j1Y/hqdefault.jpg'" alt="महाभारत का असली दोषी कौन?" loading="lazy"><span class="play"><svg viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg></span><em class="tag">AI Video</em></span><span class="cap"><b>महाभारत का असली दोषी कौन?</b><small>Watch on YouTube</small></span></a>
+    <a class="vid rv" href="https://www.youtube.com/watch?v=YRbf9-NBHzI" target="_blank" rel="noopener" aria-label="Watch कबीर परमेश्वर प्रकट लीला on YouTube"><span class="th"><img src="https://i.ytimg.com/vi/YRbf9-NBHzI/maxresdefault.jpg" onerror="this.onerror=null;this.src='https://i.ytimg.com/vi/YRbf9-NBHzI/hqdefault.jpg'" alt="कबीर परमेश्वर प्रकट लीला" loading="lazy"><span class="play"><svg viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg></span><em class="tag">AI Video</em></span><span class="cap"><b>कबीर परमेश्वर प्रकट लीला</b><small>Watch on YouTube</small></span></a>
+    <a class="vid rv" href="https://www.youtube.com/watch?v=0ivlLA1PcKs" target="_blank" rel="noopener" aria-label="Watch वास्तविक जगन्नाथ कौन है? on YouTube"><span class="th"><img src="https://i.ytimg.com/vi/0ivlLA1PcKs/maxresdefault.jpg" onerror="this.onerror=null;this.src='https://i.ytimg.com/vi/0ivlLA1PcKs/hqdefault.jpg'" alt="वास्तविक जगन्नाथ कौन है?" loading="lazy"><span class="play"><svg viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg></span><em class="tag">AI Video</em></span><span class="cap"><b>वास्तविक जगन्नाथ कौन है?</b><small>Watch on YouTube</small></span></a>
+    <a class="vid rv" href="https://www.youtube.com/watch?v=ulR2wgl9Pi8" target="_blank" rel="noopener" aria-label="Watch गंज ए शकर शेख फरीद on YouTube"><span class="th"><img src="https://i.ytimg.com/vi/ulR2wgl9Pi8/maxresdefault.jpg" onerror="this.onerror=null;this.src='https://i.ytimg.com/vi/ulR2wgl9Pi8/hqdefault.jpg'" alt="गंज ए शकर शेख फरीद" loading="lazy"><span class="play"><svg viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg></span><em class="tag">AI Movie</em></span><span class="cap"><b>गंज ए शकर शेख फरीद</b><small>Watch on YouTube</small></span></a>
+  </div>
+  <h3 class="more rv" style="margin-top:44px">News videos</h3>
+  <div class="vgrid">
+    <a class="vid rv" href="https://www.youtube.com/watch?v=D7HscRoH6sQ" target="_blank" rel="noopener" aria-label="Watch on YouTube"><span class="th"><img src="https://i.ytimg.com/vi/D7HscRoH6sQ/maxresdefault.jpg" onerror="this.onerror=null;this.src='https://i.ytimg.com/vi/D7HscRoH6sQ/hqdefault.jpg'" alt="संत रामपाल जी सनातन विरोधी हैं या हितैषी?" loading="lazy"><span class="play"><svg viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg></span><em class="tag">News</em></span><span class="cap"><b>संत रामपाल जी सनातन विरोधी हैं या हितैषी?</b><small>Watch on YouTube</small></span></a>
+    <a class="vid rv" href="https://www.youtube.com/watch?v=uQu0Mnnn7LI" target="_blank" rel="noopener" aria-label="Watch on YouTube"><span class="th"><img src="https://i.ytimg.com/vi/uQu0Mnnn7LI/maxresdefault.jpg" onerror="this.onerror=null;this.src='https://i.ytimg.com/vi/uQu0Mnnn7LI/hqdefault.jpg'" alt="शास्त्रार्थ का शंखनाद – शंकराचार्य परंपरा के संत भी चल पड़े साथ" loading="lazy"><span class="play"><svg viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg></span><em class="tag">News</em></span><span class="cap"><b>शास्त्रार्थ का शंखनाद – शंकराचार्य परंपरा के संत भी चल पड़े साथ</b><small>Watch on YouTube</small></span></a>
+    <a class="vid rv" href="https://www.youtube.com/watch?v=bcnvgeWGi48" target="_blank" rel="noopener" aria-label="Watch on YouTube"><span class="th"><img src="https://i.ytimg.com/vi/bcnvgeWGi48/maxresdefault.jpg" onerror="this.onerror=null;this.src='https://i.ytimg.com/vi/bcnvgeWGi48/hqdefault.jpg'" alt="फिल्म निर्माता ने संत जी से पूछा: “मेरी पत्नी आपको भगवान क्यों मानती है?”" loading="lazy"><span class="play"><svg viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg></span><em class="tag">News</em></span><span class="cap"><b>फिल्म निर्माता ने संत जी से पूछा: “मेरी पत्नी आपको भगवान क्यों मानती है?”</b><small>Watch on YouTube</small></span></a>
+    <a class="vid rv" href="https://www.youtube.com/watch?v=GSxcTYwyBsA" target="_blank" rel="noopener" aria-label="Watch on YouTube"><span class="th"><img src="https://i.ytimg.com/vi/GSxcTYwyBsA/maxresdefault.jpg" onerror="this.onerror=null;this.src='https://i.ytimg.com/vi/GSxcTYwyBsA/hqdefault.jpg'" alt="उज्जैन, मध्य प्रदेश से आए ब्लड कैंसर से लड़ रहे बच्चे के लिए बड़ी मदद का हाथ" loading="lazy"><span class="play"><svg viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg></span><em class="tag">News</em></span><span class="cap"><b>उज्जैन, मध्य प्रदेश से आए ब्लड कैंसर से लड़ रहे बच्चे के लिए बड़ी मदद का हाथ</b><small>Watch on YouTube</small></span></a>
+    <a class="vid rv" href="https://www.youtube.com/watch?v=gLK6xppo6Dg" target="_blank" rel="noopener" aria-label="Watch on YouTube"><span class="th"><img src="https://i.ytimg.com/vi/gLK6xppo6Dg/maxresdefault.jpg" onerror="this.onerror=null;this.src='https://i.ytimg.com/vi/gLK6xppo6Dg/hqdefault.jpg'" alt="आगरा, उत्तर प्रदेश से आए असहाय परिवार को पूरी मदद का आश्वासन" loading="lazy"><span class="play"><svg viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg></span><em class="tag">News</em></span><span class="cap"><b>आगरा, उत्तर प्रदेश से आए असहाय परिवार को पूरी मदद का आश्वासन</b><small>Watch on YouTube</small></span></a>
+  </div>
+  <h3 class="more rv" style="margin-top:44px">Annapurna Muhim videos</h3>
+  <div class="vgrid">
+    <a class="vid rv" href="https://www.youtube.com/watch?v=_r0hF0qerXI" target="_blank" rel="noopener" aria-label="Watch on YouTube"><span class="th"><img src="https://i.ytimg.com/vi/_r0hF0qerXI/maxresdefault.jpg" onerror="this.onerror=null;this.src='https://i.ytimg.com/vi/_r0hF0qerXI/hqdefault.jpg'" alt="भूख से लड़ते पाँच मासूम, माँ की आँखों में उम्मीद – सहारा बनी अन्नपूर्णा मुहिम" loading="lazy"><span class="play"><svg viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg></span><em class="tag">Annapurna Muhim</em></span><span class="cap"><b>भूख से लड़ते पाँच मासूम, माँ की आँखों में उम्मीद – सहारा बनी अन्नपूर्णा मुहिम</b><small>Watch on YouTube</small></span></a>
+    <a class="vid rv" href="https://www.youtube.com/watch?v=c5aJrCV3zrI" target="_blank" rel="noopener" aria-label="Watch on YouTube"><span class="th"><img src="https://i.ytimg.com/vi/c5aJrCV3zrI/maxresdefault.jpg" onerror="this.onerror=null;this.src='https://i.ytimg.com/vi/c5aJrCV3zrI/hqdefault.jpg'" alt="इस बूढ़ी माँ को मिली मदद – अन्नपूर्णा मुहिम" loading="lazy"><span class="play"><svg viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg></span><em class="tag">Annapurna Muhim</em></span><span class="cap"><b>इस बूढ़ी माँ को मिली मदद – अन्नपूर्णा मुहिम</b><small>Watch on YouTube</small></span></a>
+    <a class="vid rv" href="https://www.youtube.com/watch?v=P9QKUbfU8fQ" target="_blank" rel="noopener" aria-label="Watch on YouTube"><span class="th"><img src="https://i.ytimg.com/vi/P9QKUbfU8fQ/maxresdefault.jpg" onerror="this.onerror=null;this.src='https://i.ytimg.com/vi/P9QKUbfU8fQ/hqdefault.jpg'" alt="10 साल से बिस्तर पर भूखे बुजुर्गों तक पहुँचा अन्नपूर्णा मुहिम का सहारा" loading="lazy"><span class="play"><svg viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg></span><em class="tag">Annapurna Muhim</em></span><span class="cap"><b>10 साल से बिस्तर पर भूखे बुजुर्गों तक पहुँचा अन्नपूर्णा मुहिम का सहारा</b><small>Watch on YouTube</small></span></a>
+    <a class="vid rv" href="https://www.youtube.com/watch?v=kKY3mh_Zl68" target="_blank" rel="noopener" aria-label="Watch on YouTube"><span class="th"><img src="https://i.ytimg.com/vi/kKY3mh_Zl68/maxresdefault.jpg" onerror="this.onerror=null;this.src='https://i.ytimg.com/vi/kKY3mh_Zl68/hqdefault.jpg'" alt="बुजुर्ग माँ को मिला अन्नपूर्णा मुहिम का सहारा" loading="lazy"><span class="play"><svg viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg></span><em class="tag">Annapurna Muhim</em></span><span class="cap"><b>बुजुर्ग माँ को मिला अन्नपूर्णा मुहिम का सहारा</b><small>Watch on YouTube</small></span></a>
+    <a class="vid rv" href="https://www.youtube.com/watch?v=KSp_gzr0eGg" target="_blank" rel="noopener" aria-label="Watch on YouTube"><span class="th"><img src="https://i.ytimg.com/vi/KSp_gzr0eGg/maxresdefault.jpg" onerror="this.onerror=null;this.src='https://i.ytimg.com/vi/KSp_gzr0eGg/hqdefault.jpg'" alt="चार मासूमों की जिम्मेदारी… अकेली माँ का सहारा बनी अन्नपूर्णा मुहिम" loading="lazy"><span class="play"><svg viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg></span><em class="tag">Annapurna Muhim</em></span><span class="cap"><b>चार मासूमों की जिम्मेदारी… अकेली माँ का सहारा बनी अन्नपूर्णा मुहिम</b><small>Watch on YouTube</small></span></a>
+    <a class="vid rv" href="https://www.youtube.com/watch?v=tx2I8YOembg" target="_blank" rel="noopener" aria-label="Watch on YouTube"><span class="th"><img src="https://i.ytimg.com/vi/tx2I8YOembg/maxresdefault.jpg" onerror="this.onerror=null;this.src='https://i.ytimg.com/vi/tx2I8YOembg/hqdefault.jpg'" alt="अन्नपूर्णा मुहिम बनी बुज़ुर्ग के जीवन का सहारा!" loading="lazy"><span class="play"><svg viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg></span><em class="tag">Annapurna Muhim</em></span><span class="cap"><b>अन्नपूर्णा मुहिम बनी बुज़ुर्ग के जीवन का सहारा!</b><small>Watch on YouTube</small></span></a>
+  </div>
+  <div class="morebox rv">
+    <h3>I have edited 3000+ videos</h3>
+    <p>The videos above are only a small selection, and most of my edits are on two channels: 2000+ episodes on Sant Rampal Ji Live and 1000+ interviews on SA True Story. To watch more of my work, visit these channels and playlists.</p>
+    <div class="grid">
+      <div class="card yt rv"><div class="ico"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><path d="M10 8.5l5 3.5-5 3.5z"/></svg></div><h3>SA True Story channel</h3><p>Interview videos. I have edited 1000+ interviews on this channel.</p><a class="go" href="https://youtube.com/@satruestoryofficial" target="_blank" rel="noopener">Visit channel</a></div>
+      <div class="card yt rv" style="--d:.1s"><div class="ico"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><path d="M10 8.5l5 3.5-5 3.5z"/></svg></div><h3>Sant Rampal Ji Live channel</h3><p>Episode uploads. I have edited 2000+ episodes on this channel.</p><a class="go" href="https://youtube.com/@santrampaljilive" target="_blank" rel="noopener">Visit channel</a></div>
+      <div class="card yt rv" style="--d:.1s"><div class="ico"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><path d="M10 8.5l5 3.5-5 3.5z"/></svg></div><h3>Annapurna Muhim channel</h3><p>Many more videos on the channel I edit for.</p><a class="go" href="https://youtube.com/@annapurnamuhimofficial" target="_blank" rel="noopener">Visit channel</a></div>
+      <div class="card yt rv" style="--d:0.1s"><div class="ico"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><path d="M10 8.5l5 3.5-5 3.5z"/></svg></div><h3>Satlok Ashram News Channel</h3><p>Daily news videos on the channel I edit for.</p><a class="go" href="https://youtube.com/@satlokashramnewschannel" target="_blank" rel="noopener">Visit channel</a></div>
+      <div class="card yt rv" style="--d:0.2s"><div class="ico"><svg viewBox="0 0 24 24"><path d="M4 6h16M4 12h10M4 18h10M17 14l4 3-4 3z"/></svg></div><h3>Annapurna Muhim playlist</h3><p>207 videos about Annapurna Muhim in Madhya Pradesh.</p><a class="go" href="https://www.youtube.com/playlist?list=PLd1zGp4IAyV3clKJZ_u0lSBKD29oNTHV2" target="_blank" rel="noopener">Open playlist</a></div>
+      <div class="card yt rv" style="--d:0.1s"><div class="ico"><svg viewBox="0 0 24 24"><path d="M4 6h16M4 12h10M4 18h10M17 14l4 3-4 3z"/></svg></div><h3>AI Videos playlist</h3><p>22 AI films and videos.</p><a class="go" href="https://www.youtube.com/playlist?list=PLApb0agNDuAySq202KZfzcn9rwsTVqzLU" target="_blank" rel="noopener">Open playlist</a></div>
+      <div class="card yt rv" style="--d:0.2s"><div class="ico"><svg viewBox="0 0 24 24"><path d="M4 6h16M4 12h10M4 18h10M17 14l4 3-4 3z"/></svg></div><h3>World Peace Maha-Anushthan playlist</h3><p>71 news videos from the 1–3 May 2026 event.</p><a class="go" href="https://www.youtube.com/playlist?list=PL4r5gnOKESRrYYDV8SIWZNhlrWGcqraKA" target="_blank" rel="noopener">Open playlist</a></div>
+    </div>
+  </div>
+</section>
+
+<section id="experience">
+  <h2 class="rv">Experience and education</h2>
+  <div class="line" style="margin-top:30px">
+    <div class="job rv"><time>2020 – Present</time><h3>Video Editor, News Channel</h3><p>Daily news editing under tight deadlines.</p></div>
+    <div class="job rv"><time>2020 – Present</time><h3>Video Editor, Annapurna Muhim</h3><p>Regular editing of the YouTube channel’s videos.</p></div>
+    <div class="job rv"><time>Education</time><h3>B.Sc. Computer Science</h3><p>Graduate in Computer Science.</p></div>
+  </div>
+</section>
+</div>
+
+<div class="marq" aria-hidden="true"><div>
+  <span>Adobe Premiere Pro</span><em>●</em><span>Adobe Photoshop</span><em>●</em><span>News</span><em>●</em><span>Wedding</span><em>●</em><span>Shorts</span><em>●</em><span>YouTube</span><em>●</em>
+  <span>Adobe Premiere Pro</span><em>●</em><span>Adobe Photoshop</span><em>●</em><span>News</span><em>●</em><span>Wedding</span><em>●</em><span>Shorts</span><em>●</em><span>YouTube</span><em>●</em>
+</div></div>
+
+<div class="wrap">
+<section id="contact">
+  <div class="cta rv">
+    <h2>Have a video to edit?</h2>
+    <div class="btns"><a class="btn main" href="https://wa.me/917440530458">Message on WhatsApp</a><a class="btn" href="tel:+917440530458">Call +91 74405 30458</a></div>
+    <p><a class="l" href="mailto:pramoddasgwl@gmail.com">pramoddasgwl@gmail.com</a></p>
+    <p>Gwalior, Madhya Pradesh</p>
+  </div>
+</section>
+<footer>© 2026 Pramod Kushwah</footer>
+</div>
+</main>
+
+<script>
+(function(){
+var bar=document.getElementById('bar');
+function s(){bar.classList.toggle('on',window.scrollY>20)}s();addEventListener('scroll',s,{passive:true});
+// reveal
+var io=new IntersectionObserver(function(e){e.forEach(function(x){if(x.isIntersecting){x.target.classList.add('in');io.unobserve(x.target)}})},{threshold:.15});
+document.querySelectorAll('.rv').forEach(function(el){io.observe(el)});
+// card spotlight
+document.querySelectorAll('.card').forEach(function(c){c.addEventListener('pointermove',function(e){var r=c.getBoundingClientRect();c.style.setProperty('--x',(e.clientX-r.left)+'px');c.style.setProperty('--y',(e.clientY-r.top)+'px')})});
+// counters
+document.querySelectorAll('[data-to]').forEach(function(el){var to=+el.dataset.to,n=0,st=Math.ceil(to/60);var t=setInterval(function(){n=Math.min(to,n+st);el.textContent=n;if(n>=to)clearInterval(t)},40)});
+// role typing
+var roles=['News Video Editor','Wedding Film Editor','Shorts and Reels Editor','YouTube Video Editor'],ri=0,ci=0,del=false,el=document.getElementById('role');
+if(matchMedia('(prefers-reduced-motion:reduce)').matches){return}
+function tick(){var w=roles[ri];ci+=del?-1:1;el.textContent=w.slice(0,ci);var d=del?35:75;
+if(!del&&ci===w.length){del=true;d=1400}else if(del&&ci===0){del=false;ri=(ri+1)%roles.length;d=300}
+setTimeout(tick,d)}
+tick();
+})();
+</script>
+</body>
+</html>
